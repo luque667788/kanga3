@@ -1,0 +1,152 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.upload-section, .controls-section, .playlist-section {
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+input[type="file"] {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 5px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#playlist {
+    list-style: none;
+    padding: 0;
+}
+
+#playlist li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: grab;
+    background-color: #fff;
+}
+
+#playlist li:last-child {
+    border-bottom: none;
+}
+
+#playlist li.playing {
+    background-color: #e7f3ff;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+#playlist li.dragging {
+    opacity: 0.5;
+    background: #cce5ff;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    padding: 5px 10px;
+    font-size: 0.9em;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+#uploadStatus, #playbackStatus, #currentVideo, #playlistInfo {
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.status-success {
+    color: green;
+}
+
+.status-error {
+    color: red;
+}
+
+.status-pending {
+    color: orange;
+}
+
+.status-playing {
+    color: green;
+    font-weight: bold;
+}
+
+.status-idle {
+    color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    h2 {
+        font-size: 1.2em;
+    }
+    button {
+        padding: 8px 12px;
+        font-size: 0.9em;
+        width: calc(50% - 10px); /* Two buttons per row */
+    }
+    .controls-section button {
+        width: calc(33.333% - 10px); /* Three buttons per row for controls */
+    }
+    #playlist li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .delete-btn {
+        margin-top: 5px;
+        align-self: flex-end;
+    }
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raspberry Pi Video Player</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Raspberry Pi Video Player</h1>
+
+        <div class="upload-section">
+            <h2>Upload Video</h2>
+            <form id="uploadForm" enctype="multipart/form-data">
+                <input type="file" name="video" id="videoFile" accept="video/*" required>
+                <button type="submit">Upload</button>
+            </form>
+            <p id="uploadStatus"></p>
+        </div>
+
+        <div class="controls-section">
+            <h2>Controls</h2>
+            <button id="playBtn">Play</button>
+            <button id="pauseBtn">Pause</button>
+            <button id="stopBtn">Stop (Black Screen)</button>
+            <button id="prevBtn">Previous</button>
+            <button id="nextBtn">Next</button>
+            <div id="playbackStatus">Status: Idle</div>
+            <div id="currentVideo">Current Video: None</div>
+        </div>
+
+        <div class="playlist-section">
+            <h2>Playlist</h2>
+            <ul id="playlist" class="sortable-list"></ul>
+            <p id="playlistInfo">Drag and drop to reorder. Click video to play.</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
